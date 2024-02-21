@@ -55,7 +55,7 @@ else if keyboard_check_pressed(ord("E"))
 	
 	if state == States.pushing  {
 		
-		state == States.regular;
+		state = States.regular;
 		//	TODO: make grabTarget stop moving (use a 'with' statement to get started)
 		
 	}
@@ -63,7 +63,7 @@ else if keyboard_check_pressed(ord("E"))
 	else if instance_exists(grabTarget){
 		
 		//	TODO: set 'state' to the appropriate value
-		state == States.pushing;
+		state = States.pushing;
 		//Calculate grabDirection based on which axis you're closest to the grabTarget on
 		if abs(x-grabTarget.x)<abs(y-grabTarget.y){
 			grabDirection = GrabAxis.vertical	

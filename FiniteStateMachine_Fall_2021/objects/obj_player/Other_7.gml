@@ -5,6 +5,6 @@
 if state == States.dancing  {
 	
 	
-	state == States.regular
+	state = States.regular
 	sprite_index = spr_player_down
 }
