@@ -56,13 +56,17 @@ else if keyboard_check_pressed(ord("E"))
 	if state == States.pushing  {
 		
 		state = States.regular;
-		//	TODO: make grabTarget stop moving (use a 'with' statement to get started)
 		
+		with grabTarget
+		{
+			hspeed = 0;
+			vspeed = 0;
+		}
 	}
 	//If scanning (see above) found a grab target, start pushing it.
 	else if instance_exists(grabTarget){
 		
-		//	TODO: set 'state' to the appropriate value
+		
 		state = States.pushing;
 		//Calculate grabDirection based on which axis you're closest to the grabTarget on
 		if abs(x-grabTarget.x)<abs(y-grabTarget.y){
@@ -81,7 +85,7 @@ var inputVect_x = (keyboard_check(vk_right)-keyboard_check(vk_left)),
 	speedSpeed = walkSpeed,
 	hCancel = 1, vCancel = 1;
 		
-if state == States.pushing /* TODO: check that 'state' has an appropriate value here (replace false) */ {
+if state == States.pushing {
 	speedSpeed = pushSpeed;
 	
 	//grabDirection limits movement to one axis
